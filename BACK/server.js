@@ -7,14 +7,26 @@ require('dotenv').config();
 
 
 async function getWeatherByCity() {
+    let city = null;
  // fetching the city from the conf.json file
+ try {
     const cityData = await fs.readFile('./conf.json', 'utf8')
     .then(cityData => cityData = JSON.parse(cityData))
     console.log(cityData.city);
-    // fetching weather data from the API
-    const weatherData = await fetch(`${process.env.API_URL}?city=${cityData.city}&key=${process.env.API_KEY}&lang=fr`)
+    city = cityData.city;
+ } catch (error) {
+    console.error(error);
+    return;
+ }
+ // fetching weather data from the API
+ try {
+    const weatherData = await fetch(`${process.env.API_URL}?city=${city}&key=${process.env.API_KEY}&lang=fr`)
     .then(weatherData => weatherData.json())
     console.log(weatherData);  
+ } catch (error) {
+    console.error(error);
+    return;
+ }
 };
    
 
