@@ -6,27 +6,6 @@ const path = require('path');
 require('dotenv').config();
 
 
-
-
-async function getWeatherByCity() {
- // fetching the city from the conf.json file
- try {
-    const cityData = await fs.readFile('./conf.json', 'utf8')
-    .then(cityData => cityData = JSON.parse(cityData))
-    city = cityData.city;
-
- // fetching weather data from the API
-    const weatherData = await fetch(`${process.env.API_URL}?city=${city}&key=${process.env.API_KEY}&lang=fr`)
-    .then(weatherData => weatherData.json())
- } catch (error) {
-    console.error(error);
-    return;
- }
-};
-   
-
-
-
 app.use(express.static(path.join(__dirname, '../FRONT')));
 
 app.get('/', (req, res) => {
@@ -43,11 +22,12 @@ app.get('/api', async function (req, res) {
         const cityData = await fs.readFile('./conf.json', 'utf8')
         .then(cityData => cityData = JSON.parse(cityData))
         city = cityData.city;
-
+     
         // fetching weather data from the API
-        const weatherData = await fetch(`${process.env.API_URL}?city=${city}&key=${process.env.API_KEY}&lang=fr`)
+        const weatherData = await fetch(`${process.env.API_URL}?city=${city}*&key=${process.env.API_KEY}&lang=fr`)
         .then(weatherData => weatherData.json())
         res.json(weatherData);
+       
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Erreur lors de la récupération des données météo.' });
