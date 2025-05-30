@@ -2,11 +2,32 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://bitbucket.org/michaelben/facil-alternance/src/8c2a68789c4790f7b569478993661020b655e3ad/Downloads/app%20meteo%20V2/FRONT/style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/8fae4ee487.js" crossorigin="anonymous"></script>
     <script src="meteo.js"></script>
     <title>Document</title>
 </head>
 <body>
-    <h1> La Météo de </h1>
+    <div id = "card">
+        <p id = "day"></p>
+        <p id = "heure"></p>
+        <img src = "" id = "icon" alt = ""/>
+        <p id = "temp"></p>
+        <p id = "description"></p>
+        <div id="localisation">
+            <p id="map"></p>
+            <p id = "ville"> </p>
+        </div>
+        <div id = "bottom">
+            <div id="left">
+                <p id="thermo"></p>
+                <p id = "ressenti"></p>
+            </div>
+            <div id="right">
+                <p id="drop"></p>
+                <p id = "humid"></p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
