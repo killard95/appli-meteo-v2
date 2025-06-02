@@ -13,7 +13,6 @@ setInterval(() => {
 
     if (minute == '00' && second == '00') {
         datas();
-        console.log("Les données viennent d'etre mises à jour");
     }
     if (heure == '00' && minute == '00' && second == '00') {
         getDay();
@@ -27,7 +26,6 @@ function getDay() {
     numJour = date.getDate(); 
     mois = date.getMonth();
     an = date.getFullYear();
-    // console.log(`Aujourd'hui, nous sommes le ${tab_jour[jour]} ${numJour} ${tab_mois[mois]} ${date.getFullYear()}`)
     displayDate(jour, numJour, mois, an);
 }
 
@@ -80,7 +78,7 @@ function displayTemperatureRess(temperatureRess) {
     let thermo = document.querySelector('#thermo');
     let icon = `<i class="fa-solid fa-temperature-half fa-2xl"></i>`
     thermo.innerHTML = icon;
-    ressenti.innerText = `${temperatureRess}°C\n ressentie`;
+    ressenti.innerText = `${temperatureRess}°C\n ressenti`;
 }
 function displayHumidity(humidity) {
     let humid = document.querySelector('#humid');
@@ -105,13 +103,9 @@ function cardColor(sunrise, sunset) {
         if (heure < sunriseHour || heure == sunriseHour && minute < sunriseMinute || heure == sunsetHour && minute > sunsetMinute) {
             card.style.background = "linear-gradient(#000019, #000033, #00004C)";
         } else {
-            card.style.background = 'linear-gradient(#0000FF, #3333FF, #6666FF)'
+            card.style.background = "linear-gradient(#4C4CFF, #7F7FFF, #B2B2FF)";
         }
     },1000)
-
 }
-
-
-
 
 datas();
