@@ -1,50 +1,129 @@
-#card {
-    border: 0.2em black solid;
-    border-radius: 3em;
-    width: 50%;
-    font-family: cursive;
-    font-size: 130%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
+    @media (orientation: portrait) {
+    #card {
+        width: 95vw;
+        height: 95vh;
+        font-family: Georgia, 'Times New Roman', Times, sans-serif;
+        font-size: 3vw;
+        margin: 0;
+        padding: 1%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+    }
+    #meteo {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2em;
+        order: 2;
+    }
+    #bottom {
+        border-top: 0.2em white solid;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        order: 3;
+    }
+    #top {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-content: flex-start;
+        justify-content: flex-start;
+        order: 1;
+    }
+    #left {
+        border-right: 0.2em white solid;
+    }
+    #localisation {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1em;
+    }
+    .left, .right {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        width: 50%
+    }
+    #temp {
+        font-size: 10vw;
+        margin: 0;
+    }
+    img {
+        width: 25%;
+        height: auto;
+    }
+}
+@media (orientation: landscape) {
+    #card {
+        width: 95vw;
+        height: 95vh;
+        font-family: Georgia, 'Times New Roman', Times, sans-serif;
+        font-size: 2vw;
+        margin: 0;
+        padding: 1%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+    }
+    #meteo {
+        width: 50%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-right: solid white 0.2em;
+    }
+    #bottom {
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
 
+    }
+    #top {
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
+        #localisation {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1em;
+    }
+    .left, .right {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        width: 50%
+    }
+    #temp {
+        font-size: 10vw;
+        margin: 0;
+    }
+    img {
+        width: 20vw;
+    }
 }
-#bottom {
-    border-top: 0.2em white solid;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: center;
-}
-#left {
-    border-right: 0.2em white solid;
-}
-#localisation {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 1em;
-}
-#left, #right {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 1em;
-    width: 50%
-}
-img {
-    width: 60%;
-}
-
-#temp {
-    font-size: 300%;
-    margin: 0;
-}
-#heure {
-    margin-top: 0;
-}
-
