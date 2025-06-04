@@ -1,11 +1,13 @@
+    body, html {
+        margin: 0;
+        padding: 0;
+    }
     @media (orientation: portrait) {
     #card {
-        width: 95vw;
-        height: 95vh;
+        width: 100vw;
+        height: 100vh;
         font-family: Georgia, 'Times New Roman', Times, sans-serif;
         font-size: 3vw;
-        margin: 0;
-        padding: 1%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -57,18 +59,17 @@
         width: 50%
     }
     #temp {
-        font-size: 10vw;
+        font-size: 8vw;
         margin: 0;
     }
     img {
-        width: 25%;
-        height: auto;
+        width: 40vw;
     }
 }
 @media (orientation: landscape) {
     #card {
-        width: 95vw;
-        height: 95vh;
+        width: 100vw;
+        height: 100vh;
         font-family: Georgia, 'Times New Roman', Times, sans-serif;
         font-size: 2vw;
         margin: 0;
@@ -87,6 +88,7 @@
         justify-content: center;
         align-items: center;
         border-right: solid white 0.2em;
+        order: 1;
     }
     #bottom {
         width: 25%;
@@ -95,6 +97,7 @@
         align-content: center;
         justify-content: center;
         align-items: center;
+        order: 2;
 
     }
     #top {
@@ -104,6 +107,7 @@
         align-content: center;
         justify-content: center;
         align-items: center;
+        order: 3;
     }
         #localisation {
         display: flex;
@@ -120,10 +124,10 @@
         width: 50%
     }
     #temp {
-        font-size: 10vw;
+        font-size: 7vw;
         margin: 0;
     }
     img {
-        width: 20vw;
+        width: 15vw;
     }
 }
