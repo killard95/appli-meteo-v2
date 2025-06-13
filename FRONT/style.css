@@ -6,6 +6,7 @@
         width: 100vw;
         height: 100vh;
         font-family: Georgia, 'Times New Roman', Times, sans-serif;
+        text-shadow: #00004C 1px 0 10px;
         display: flex;
         justify-content: space-between;
         align-items: center;
