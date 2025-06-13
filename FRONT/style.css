@@ -2,47 +2,28 @@
         margin: 0;
         padding: 0;
     }
-    @media (orientation: portrait) {
     #card {
         width: 100vw;
         height: 100vh;
         font-family: Georgia, 'Times New Roman', Times, sans-serif;
-        font-size: 3vw;
         display: flex;
-        flex-direction: column;
         justify-content: space-between;
         align-items: center;
         color: white;
     }
     #meteo {
-        width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         align-items: center;
-        gap: 2em;
-        order: 2;
     }
     #bottom {
-        border-top: 0.2em white solid;
-        width: 100%;
         display: flex;
-        flex-direction: row;
         align-content: center;
         justify-content: center;
         align-items: center;
-        order: 3;
     }
     #top {
-        width: 100%;
         display: flex;
-        flex-direction: row;
-        align-content: flex-start;
-        justify-content: flex-start;
-        order: 1;
-    }
-    #left {
-        border-right: 0.2em white solid;
     }
     #localisation {
         display: flex;
@@ -59,73 +40,71 @@
         width: 50%
     }
     #temp {
-        font-size: 8vw;
         margin: 0;
+    }
+
+    @media (orientation: portrait) {
+    #card {
+        font-size: 3vw;
+        flex-direction: column;
+    }
+    #meteo {
+        width: 100%;
+        justify-content: space-between;
+        gap: 2em;
+        order: 2;
+    }
+    #bottom {
+        border-top: 0.2em white solid;
+        width: 100%;
+        flex-direction: row;
+        order: 3;
+    }
+    #top {
+        width: 100%;
+        flex-direction: row;
+        align-content: flex-start;
+        justify-content: flex-start;
+        order: 1;
+    }
+    #left {
+        border-right: 0.2em white solid;
+    }
+    #temp {
+        font-size: 8vw;
     }
     img {
         width: 40vw;
     }
 }
+
 @media (orientation: landscape) {
     #card {
-        width: 100vw;
-        height: 100vh;
-        font-family: Georgia, 'Times New Roman', Times, sans-serif;
         font-size: 2vw;
-        margin: 0;
-        padding: 1%;
-        display: flex;
         flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        color: white;
     }
     #meteo {
         width: 50%;
         height: 90%;
-        display: flex;
-        flex-direction: column;
         justify-content: center;
-        align-items: center;
         border-right: solid white 0.2em;
         order: 1;
     }
     #bottom {
         width: 25%;
-        display: flex;
         flex-direction: column;
-        align-content: center;
-        justify-content: center;
-        align-items: center;
         order: 2;
-
     }
     #top {
         width: 25%;
-        display: flex;
         flex-direction: column;
         align-content: center;
         justify-content: center;
         align-items: center;
         order: 3;
     }
-        #localisation {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 1em;
-    }
-    .left, .right {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 1em;
-        width: 50%
-    }
     #temp {
         font-size: 7vw;
-        margin: 0;
     }
     img {
         width: 15vw;
