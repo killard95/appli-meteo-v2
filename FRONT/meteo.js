@@ -89,18 +89,20 @@ function displayHumidity(humidity) {
 }
 function cardColor(sunrise, sunset) {
     let card = document.querySelector('#card');
-    let sunriseTime = sunrise;
-    let sunriseHour = parseInt(sunriseTime.slice(0,2));
+    let sunriseTime = sunrise
+    let sunriseHour = parseInt(sunriseTime.slice(0,2)) + 2;
     let sunriseMinute = parseInt(sunriseTime.slice(3,5));
     let sunsetTime = sunset;
-    let sunsetHour = parseInt(sunsetTime.slice(0,2));
+    let sunsetHour = parseInt(sunsetTime.slice(0,2)) + 2;
     let sunsetMinute = parseInt(sunsetTime.slice(3,5));
+
+
 
     setInterval(() => {
         date = new Date();
-        heure = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
-        minute = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
-        if (heure < sunriseHour || heure == sunriseHour && minute < sunriseMinute || heure == sunsetHour && minute > sunsetMinute) {
+        heure = date.getHours();
+        minute = date.getMinutes();
+        if (heure == sunsetHour && minute > sunsetMinute || heure > sunsetHour && heure < 24 || heure < sunriseHour || heure == sunriseHour && minute < sunriseMinute) {
             card.style.background = "linear-gradient(#000019, #000033, #00004C)";
         } else {
             card.style.background = "linear-gradient(#4C4CFF, #7F7FFF, #B2B2FF)";
