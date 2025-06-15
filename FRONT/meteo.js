@@ -1,7 +1,8 @@
+// arrays for having the name of days and months
 const tab_jour = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
 const tab_mois = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
 
-
+// get date and hour in real time to display it and reload new datas every hours
 setInterval(() => {
     date = new Date();
     jour = date.getDay();
@@ -20,6 +21,7 @@ setInterval(() => {
     displayHour(heure, minute, second);
 }, 1000);
 
+
 function getDay() {
     date = new Date();
     jour = date.getDay();
@@ -29,6 +31,7 @@ function getDay() {
     displayDate(jour, numJour, mois, an);
 }
 
+// async function to get data from the api and lauch every display functions
 async function datas() {
     const data = await fetch('/api')
     .then(data => data.json())
@@ -52,27 +55,34 @@ function displayCity(city, country_code) {
     getDay();
 
 }
+
+
 function displayDate(jour, numJour, mois, year) {
     let day = document.querySelector('#day');
     day.innerText = `${tab_jour[jour]} ${numJour} ${tab_mois[mois]} ${year}`;
 }
+
 function displayHour(heure, minute, seconde) {
     let hour = document.querySelector('#heure');
     hour.innerText = `${heure} : ${minute} : ${seconde}`
 }
+
 function displayIcon(image, alt) {
     let img = document.querySelector('#icon');
     img.src = `icons/${image}.png`;
     img.alt = `${alt}`;
 }
+
 function displayTemperature(temperature) {
     let temp = document.querySelector('#temp');
     temp.innerText = `${temperature}°C`;
 }
+
 function displayDescription(description) {
     let weatherDescription = document.querySelector('#description');
     weatherDescription.innerText = `${description}`;
 }
+
 function displayTemperatureRess(temperatureRess) {
     let ressenti = document.querySelector('#ressenti');
     let thermo = document.querySelector('#thermo');
@@ -87,6 +97,8 @@ function displayHumidity(humidity) {
     drop.innerHTML = icon;
     humid.innerText = `${humidity}%\n humidité`;
 }
+
+// function to change the theme (background color) depending on hours of sunrise and sunset
 function cardColor(sunrise, sunset) {
     let card = document.querySelector('#card');
     let sunriseTime = sunrise
@@ -95,8 +107,6 @@ function cardColor(sunrise, sunset) {
     let sunsetTime = sunset;
     let sunsetHour = parseInt(sunsetTime.slice(0,2)) + 2;
     let sunsetMinute = parseInt(sunsetTime.slice(3,5));
-
-
 
     setInterval(() => {
         date = new Date();
