@@ -115,7 +115,7 @@ function cardColor(sunrise, sunset) {
         if (heure == sunsetHour && minute > sunsetMinute || heure > sunsetHour && heure < 24 || heure < sunriseHour || heure == sunriseHour && minute < sunriseMinute) {
             card.style.background = "linear-gradient(#000019, #000033, #00004C)";
         } else {
-            card.style.background = "linear-gradient(#4C4CFF, #7F7FFF, #B2B2FF)";
+            card.style.background = "linear-gradient(#0000FF, #4169E1, #6495ED)";
         }
     },1000)
 }
