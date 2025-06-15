@@ -26,7 +26,6 @@ app.get('/api', async function (req, res) {
         country = cityData.country;
      
         // fetching weather data from the API
-        // const weatherData = await fetch(`${process.env.API_URL}?city=${city}&key=${process.env.API_KEY}&lang=fr`)
         const weatherData = await fetch(`${process.env.API_URL}?city=${city}&postal_code=${cp}&country=${country}&key=${process.env.API_KEY}&lang=fr`)
         .then(weatherData => weatherData.json())
         res.json(weatherData);
