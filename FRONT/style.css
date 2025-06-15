@@ -2,6 +2,10 @@
         margin: 0;
         padding: 0;
     }
+    h1{
+        margin: 0;
+        padding: 0;
+    }
     #card {
         width: 100vw;
         height: 100vh;
@@ -51,7 +55,6 @@
     #meteo {
         width: 100%;
         justify-content: space-between;
-        gap: 2em;
         order: 2;
     }
     #bottom {
